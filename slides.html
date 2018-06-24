@@ -1,0 +1,225 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="generator" content="pandoc">
+  <meta name="author" content="Igor Khorlo, Syneos Health">
+  <title>Documentation as a Code</title>
+  <meta name="apple-mobile-web-app-capable" content="yes">
+  <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
+  <link rel="stylesheet" href="reveal.js/css/reveal.css">
+  <style type="text/css">
+      code{white-space: pre-wrap;}
+      span.smallcaps{font-variant: small-caps;}
+      span.underline{text-decoration: underline;}
+      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
+  <!-- Printing and PDF exports -->
+  <script>
+    var link = document.createElement( 'link' );
+    link.rel = 'stylesheet';
+    link.type = 'text/css';
+    link.href = window.location.search.match( /print-pdf/gi ) ? 'reveal.js/css/print/pdf.css' : 'reveal.js/css/print/paper.css';
+    document.getElementsByTagName( 'head' )[0].appendChild( link );
+  </script>
+  <!--[if lt IE 9]>
+  <script src="reveal.js/lib/js/html5shiv.js"></script>
+  <![endif]-->
+</head>
+<body>
+  <div class="reveal">
+    <div class="slides">
+
+<section id="title-slide">
+  <h1 class="title">Documentation as a Code</h1>
+  <p class="author">Igor Khorlo, Syneos Health</p>
+  <p class="date">June 28, 2018 <br> PhUSE SDE <br>📍 Basel, Switzerland</p>
+</section>
+
+<section><section id="the-problem" class="title-slide slide level1"><h1>The problem</h1></section><section id="why-do-we-need-documentation" class="slide level2">
+<h2>Why do we need documentation?</h2>
+<ul>
+<li class="fragment">Standardize software usage</li>
+<li class="fragment">Help users to get started</li>
+<li class="fragment">Documents processes</li>
+</ul>
+</section><section id="how-do-you-manage-documentation" class="slide level2">
+<h2>How do you manage documentation?</h2>
+<ul>
+<li class="fragment">Do you use Microsoft Word?</li>
+<li class="fragment">CMS?</li>
+<li class="fragment">Sharepoint?</li>
+</ul>
+<!--  
+## asd {data-background="assets/semantic-styles.png" width=50%}
+
+---
+
+![](assets/semantic-styles.png){width=70%}
+-->
+</section><section class="slide level2">
+
+<p><strong>Right way</strong></p>
+<ul>
+<li class="fragment">Semantically maintain styles across a document</li>
+</ul>
+<p><strong>Wrong way</strong></p>
+<ul>
+<li class="fragment">Arial, 16pt, bold</li>
+<li class="fragment">Times New Roman, 11pt</li>
+</ul>
+</section><section id="disadvantages-of-wysiwyg-approach" class="slide level2">
+<h2>Disadvantages of <a href="https://en.wikipedia.org/wiki/WYSIWYG">WYSIWYG</a> approach</h2>
+<!-- 
+Disadvantages of using Microsoft Word and similar [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) applications for Documentation:
+-->
+<ul>
+<li class="fragment">Keeping content and styling together.</li>
+<li class="fragment">Hard to review changes over many versions (track changes).</li>
+<li class="fragment">Hard to maintain several formats at once: DOCX, PDF, etc.</li>
+<li class="fragment">Very hard to collaborate.</li>
+<li class="fragment">Hard to automate.</li>
+</ul>
+</section></section>
+<section><section id="approach" class="title-slide slide level1"><h1>Approach</h1></section><section id="separation-of-concerns" class="slide level2">
+<h2>Separation of concerns</h2>
+<p><img data-src="assets/separation-of-concerns.png" /></p>
+<!--
+digraph G {
+    subgraph cluster_0 {
+        style=filled;
+        color=lightgrey;
+        node [style=filled,color=white];
+        pdf; docx; html; etc;
+    }
+    
+    content -> render
+    styling -> render
+    
+    render -> pdf
+    render -> docx
+    render -> html
+    render -> etc
+}
+-->
+</section><section id="write-the-docs" class="slide level2">
+<h2><a href="http://www.writethedocs.org/">Write the Docs</a></h2>
+<!-- TODO screenshot does not fit -->
+<p><img data-src="assets/write-the-docs.png" style="width:75.0%" /></p>
+</section><section id="its-source" class="slide level2">
+<h2><a href="https://raw.githubusercontent.com/writethedocs/www/master/docs/index.rst">Its source</a></h2>
+<p><img data-src="assets/write-the-docs-src.png" style="width:85.0%" /></p>
+</section><section id="sas-kernel-for-jupyter" class="slide level2">
+<h2><a href="https://sassoftware.github.io/sas_kernel/overview.html">SAS Kernel for Jupyter</a></h2>
+<p><img data-src="assets/sas-kernel-docs.png" style="width:85.0%" /></p>
+</section><section id="its-source-1" class="slide level2">
+<h2><a href="https://sassoftware.github.io/sas_kernel/_sources/overview.rst.txt">Its source</a></h2>
+<p><img data-src="assets/sas-kernel-docs-src.png" style="width:85.0%" /></p>
+</section><section id="minus-markup" class="slide level2">
+<h2>Minus markup</h2>
+<!-- TODO shadow -->
+<div class="columns">
+<div class="column" style="width:50%;">
+<p><img data-src="assets/sas-kernel-docs-src.png" /></p>
+</div><div class="column" style="width:50%;">
+<p><img data-src="assets/sas-kernel-docs-src-markup.png" /></p>
+</div>
+</div>
+</section><section id="markup-languages" class="slide level2">
+<h2>Markup languages</h2>
+<ul>
+<li class="fragment">Markdown</li>
+<li class="fragment">reStructuredText</li>
+<li class="fragment">Asciidoc</li>
+</ul>
+</section><section id="generators" class="slide level2">
+<h2>Generators</h2>
+<ul>
+<li class="fragment"><a href="http://www.sphinx-doc.org/en/master/">sphinx</a></li>
+<li class="fragment"><a href="http://pandoc.org/index.html">pandoc</a></li>
+<li class="fragment"><a href="http://www.methods.co.nz/asciidoc/">AsciiDoc</a></li>
+</ul>
+</section></section>
+<section><section id="benefits" class="title-slide slide level1"><h1>Benefits</h1></section><section class="slide level2">
+
+<ul>
+<li class="fragment">text editors (like <a href="https://www.sublimetext.com/">Sublime Text</a>, <a href="https://en.wikipedia.org/wiki/Vim_(text_editor)">Vim</a>, <a href="https://en.wikipedia.org/wiki/Emacs">Emacs</a>, <a href="https://atom.io/">Atom</a>, <a href="https://code.visualstudio.com/">Visual Studio Code</a>, <a href="http://brackets.io/">Brackets</a>)</li>
+<li class="fragment">version control systems (<a href="https://git-scm.com/">Git</a>, <a href="https://subversion.apache.org/">Subversion</a>, <a href="https://en.wikipedia.org/wiki/Mercurial">Mercurial</a>)</li>
+<li class="fragment">automation via Continuous Integration/Continuous Deployment
+<ul>
+<li class="fragment">spellcheck</li>
+<li class="fragment">post/pre processing</li>
+</ul></li>
+</ul>
+</section><section id="vcs-blame" class="slide level2">
+<h2><a href="https://gitlab.com/gitlab-com/www-gitlab-com/blame/master/source/handbook/git-page-update/index.html.md">VCS Blame</a></h2>
+<p><img data-src="assets/vcs-blame.png" style="width:80.0%" /></p>
+</section><section id="pull-requests" class="slide level2">
+<h2><a href="https://gitlab.com/gitlab-com/www-gitlab-com/merge_requests/12541/diffs?view=inline">Pull requests</a></h2>
+<p><img data-src="assets/pull-request.png" /></p>
+</section></section>
+<section><section id="real-world-examples" class="title-slide slide level1"><h1>Real world examples</h1></section><section id="gitlab" class="slide level2">
+<h2><a href="https://about.gitlab.com/">GitLab</a> <!-- {data-background="assets/gitlab-main.gif"} --></h2>
+<p><img data-src="assets/gitlab-main.gif" style="width:90.0%" /></p>
+</section><section id="gitlab-handbook" class="slide level2">
+<h2><a href="https://about.gitlab.com/handbook/">GitLab Handbook</a></h2>
+<p><img data-src="assets/gitlab-handbook.png" style="width:80.0%" /></p>
+</section><section id="amazon-aws-s3-docs" class="slide level2">
+<h2><a href="https://docs.aws.amazon.com/AmazonS3/latest/gsg/OpeningAnObject.html">Amazon AWS S3 docs</a></h2>
+<p><img data-src="assets/amazon-s3-docs.png" /></p>
+</section></section>
+<section><section id="the-end" class="title-slide slide level1"><h1>The end</h1></section><section id="contact-info" class="slide level2">
+<h2>Contact info</h2>
+<p>Igor Khorlo</p>
+<p><img style="background:none; border:none; box-shadow:none; width:30.0%;" src="assets/logo.svg" data-lazy-loaded></p>
+<!-- ![](assets/logo.svg){#syneos-logo width=30%} -->
+<p><a href="https://www.syneoshealth.com/">Syneos Health</a></p>
+<p><a href="https://www.linkedin.com/in/igor-khorlo-4546129a/" class="uri">https://www.linkedin.com/in/igor-khorlo-4546129a/</a></p>
+<p>igor.khorlo@syneoshelath.com</p>
+<p>igor.khorlo@gmail.com</p>
+</section></section>
+    </div>
+  </div>
+
+  <script src="reveal.js/lib/js/head.min.js"></script>
+  <script src="reveal.js/js/reveal.js"></script>
+
+  <script>
+
+      // Full list of configuration options available at:
+      // https://github.com/hakimel/reveal.js#configuration
+      Reveal.initialize({
+        // Push each slide change to the browser history
+        history: true,
+        // Transition style
+        transition: 'fade', // none/fade/slide/convex/concave/zoom
+        math: {
+          mathjax: 'https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.0/MathJax.js',
+          config: 'TeX-AMS_HTML-full',
+          tex2jax: {
+            inlineMath: [['\\(','\\)']],
+            displayMath: [['\\[','\\]']],
+            balanceBraces: true,
+            processEscapes: false,
+            processRefs: true,
+            processEnvironments: true,
+            preview: 'TeX',
+            skipTags: ['script','noscript','style','textarea','pre','code'],
+            ignoreClass: 'tex2jax_ignore',
+            processClass: 'tex2jax_process'
+          },
+        },
+
+        // Optional reveal.js plugins
+        dependencies: [
+          { src: 'reveal.js/lib/js/classList.js', condition: function() { return !document.body.classList; } },
+          { src: 'reveal.js/plugin/zoom-js/zoom.js', async: true },
+          { src: 'reveal.js/plugin/math/math.js', async: true },
+          { src: 'reveal.js/plugin/notes/notes.js', async: true }
+        ]
+      });
+    </script>
+    </body>
+</html>

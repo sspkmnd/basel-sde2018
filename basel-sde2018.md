@@ -5,12 +5,12 @@
 
 Have you ever been annoyed by Microsoft Word? 
 This moment when you carefully edit your document and then one inaccurate action spoils the formatting. 
-Or when you were trying to semantically maintain styles in the document (like headers, lists, image captures, etc.) and then, in the end, found that some parts of the text have inconsistent font attributes or indentation. 
+Or when you are trying to semantically maintain styles in the document (like headers, lists, image captures, etc.) and then, in the end, find that some parts of the text have inconsistent font attributes or indentation. 
 This presentation will reveal another approach for documentation creation — separation of concerns between the actual content and styling. 
 Putting meaning and semantics on one side and decoration and styling on another side. 
-This separation will make possible to render the same content to different file types like HTML, PDF, DOCX, and many others. Storing content in a lightweight markup language like [Markdown][markdown-fireball], [AsciiDoc], etc. (which is basically a plain text) will make it possible to use developers tools to boost your performance:
+This separation will make possible to render the same content to different file types like HTML, PDF, DOCX, and many others. Storing content in a lightweight markup language like [Markdown][markdown-fireball], [AsciiDoc], etc. (which is basically a plain text) will make it possible to use developer tools to boost your productivity:
 
-- text editors ([Sublime Text], [Vim], [Emacs], [Atom], [Visual Studio Code], [Brackets])
+- text editors (like [Sublime Text], [Vim], [Emacs], [Atom], [Visual Studio Code], [Brackets])
 - version control systems ([Git], [Subversion][svn], [Mercurial][hg])
 
 Forget about buggy "track changes" from Word. 
