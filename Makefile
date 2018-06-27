@@ -28,7 +28,7 @@ slides: slides.html
 zip:
 	rm -r artifacts artifacts.zip
 	mkdir -p artifacts
-	cp -r slides.html reveal.js assets artifacts
+	cp -r slides.html reveal.js assets artifacts Documentation\ as\ a\ Code.pdf
 	zip -r artifacts.zip artifacts
 
 .PHONY: clean

@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="generator" content="pandoc">
-  <meta name="author" content="Igor Khorlo, Syneos Health">
-  <title>Documentation as a Code</title>
+  <meta name="author" content="Igor Khorlo">
+  <title>Documentation   as a Code</title>
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black-translucent">
   <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no, minimal-ui">
@@ -14,6 +14,71 @@
       span.smallcaps{font-variant: small-caps;}
       span.underline{text-decoration: underline;}
       div.column{display: inline-block; vertical-align: top; width: 50%;}
+  </style>
+  <style type="text/css">
+a.sourceLine { display: inline-block; line-height: 1.25; }
+a.sourceLine { pointer-events: none; color: inherit; text-decoration: inherit; }
+a.sourceLine:empty { height: 1.2em; position: absolute; }
+.sourceCode { overflow: visible; }
+code.sourceCode { white-space: pre; position: relative; }
+div.sourceCode { margin: 1em 0; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+code.sourceCode { white-space: pre-wrap; }
+a.sourceLine { text-indent: -1em; padding-left: 1em; }
+}
+pre.numberSource a.sourceLine
+  { position: relative; }
+pre.numberSource a.sourceLine:empty
+  { position: absolute; }
+pre.numberSource a.sourceLine::before
+  { content: attr(data-line-number);
+    position: absolute; left: -5em; text-align: right; vertical-align: baseline;
+    border: none; pointer-events: all;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {  }
+@media screen {
+a.sourceLine::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
   </style>
   <link rel="stylesheet" href="reveal.js/css/theme/white.css" id="theme">
   <!-- Printing and PDF exports -->
@@ -33,8 +98,8 @@
     <div class="slides">
 
 <section id="title-slide">
-  <h1 class="title">Documentation as a Code</h1>
-  <p class="author">Igor Khorlo, Syneos Health</p>
+  <h1 class="title">Documentation <br> as a Code</h1>
+  <p class="author">Igor Khorlo <img data-src="assets/logo.svg" style="background:none; border:none; box-shadow:none; vertical-align: middle;" width="200" /></p>
   <p class="date">June 28, 2018 <br> PhUSE SDE <br>📍 Basel, Switzerland</p>
 </section>
 
@@ -45,6 +110,14 @@
 <li class="fragment">Help users to get started</li>
 <li class="fragment">Documents processes</li>
 </ul>
+<aside class="notes">
+<p>As we all know software development has 2 main problems:</p>
+<ul>
+<li>naming a variables</li>
+<li>lack of documentation</li>
+</ul>
+<p>Apart from this, …</p>
+</aside>
 </section><section id="how-do-you-manage-documentation" class="slide level2">
 <h2>How do you manage documentation?</h2>
 <ul>
@@ -59,8 +132,8 @@
 
 ![](assets/semantic-styles.png){width=70%}
 -->
-</section><section class="slide level2">
-
+</section><section id="section" class="slide level2" style="text-align:left;">
+<h2></h2>
 <p><strong>Right way</strong></p>
 <ul>
 <li class="fragment">Semantically maintain styles across a document</li>
@@ -82,10 +155,15 @@ Disadvantages of using Microsoft Word and similar [WYSIWYG](https://en.wikipedia
 <li class="fragment">Very hard to collaborate.</li>
 <li class="fragment">Hard to automate.</li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Keeping docs in sync with a codebase</li>
+</ul>
+</aside>
 </section></section>
 <section><section id="approach" class="title-slide slide level1"><h1>Approach</h1></section><section id="separation-of-concerns" class="slide level2">
 <h2>Separation of concerns</h2>
-<p><img data-src="assets/separation-of-concerns.png" /></p>
+<p><img data-src="assets/separation-of-concerns.svg" style="background:none; border:none; box-shadow:none;" width="1000" /></p>
 <!--
 digraph G {
     subgraph cluster_0 {
@@ -104,27 +182,116 @@ digraph G {
     render -> etc
 }
 -->
-</section><section id="write-the-docs" class="slide level2">
-<h2><a href="http://www.writethedocs.org/">Write the Docs</a></h2>
-<!-- TODO screenshot does not fit -->
-<p><img data-src="assets/write-the-docs.png" style="width:75.0%" /></p>
-</section><section id="its-source" class="slide level2">
-<h2><a href="https://raw.githubusercontent.com/writethedocs/www/master/docs/index.rst">Its source</a></h2>
-<p><img data-src="assets/write-the-docs-src.png" style="width:85.0%" /></p>
-</section><section id="sas-kernel-for-jupyter" class="slide level2">
-<h2><a href="https://sassoftware.github.io/sas_kernel/overview.html">SAS Kernel for Jupyter</a></h2>
-<p><img data-src="assets/sas-kernel-docs.png" style="width:85.0%" /></p>
-</section><section id="its-source-1" class="slide level2">
-<h2><a href="https://sassoftware.github.io/sas_kernel/_sources/overview.rst.txt">Its source</a></h2>
-<p><img data-src="assets/sas-kernel-docs-src.png" style="width:85.0%" /></p>
-</section><section id="minus-markup" class="slide level2">
-<h2>Minus markup</h2>
-<!-- TODO shadow -->
+</section><section class="slide level2">
+
+<p><a href="http://www.writethedocs.org/"><img data-src="assets/write-the-docs.png" style="width:75.0%" /></a></p>
+<!--
+
+## [Its source](https://raw.githubusercontent.com/writethedocs/www/master/docs/index.rst)
+
+![](assets/write-the-docs-src.png){width=85%}
+
+-->
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb1"><pre class="sourceCode rst"><code class="sourceCode rest"><a class="sourceLine" id="cb1-1" data-line-number="1">Welcome to our community!</a>
+<a class="sourceLine" id="cb1-2" data-line-number="2">=========================</a>
+<a class="sourceLine" id="cb1-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb1-4" data-line-number="4">**Write the Docs** is a global community of people who care about documentation. Our primary gathering places are:</a>
+<a class="sourceLine" id="cb1-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb1-6" data-line-number="6">* <span class="kw">:doc:</span><span class="dv">`Our slack network &lt;/slack&gt;`</span> with thousands of members</a>
+<a class="sourceLine" id="cb1-7" data-line-number="7">* <span class="kw">:doc:</span><span class="dv">`Conferences &lt;/conf/index&gt;`</span> on 3 continents</a>
+<a class="sourceLine" id="cb1-8" data-line-number="8">* <span class="kw">:doc:</span><span class="dv">`Local meetups &lt;/meetups/index&gt;`</span> in over 30 cities</a>
+<a class="sourceLine" id="cb1-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb1-10" data-line-number="10">We consider everyone who cares about communication, documentation, and</a>
+<a class="sourceLine" id="cb1-11" data-line-number="11">their users to be a member of our community. This can be programmers,</a>
+<a class="sourceLine" id="cb1-12" data-line-number="12">tech writers, developer advocates, customer support, marketers, and anyone else who wants</a>
+<a class="sourceLine" id="cb1-13" data-line-number="13">people to have great experiences with software.</a>
+<a class="sourceLine" id="cb1-14" data-line-number="14"></a>
+<a class="sourceLine" id="cb1-15" data-line-number="15">Our conferences create a time and a place for the global community of</a>
+<a class="sourceLine" id="cb1-16" data-line-number="16"><span class="kw">:doc:</span><span class="dv">`documentarians`</span> to share information, discuss ideas, and work together</a>
+<a class="sourceLine" id="cb1-17" data-line-number="17">to improve the **art and science of documentation**.</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb2"><pre class="sourceCode rst"><code class="sourceCode rest"><a class="sourceLine" id="cb2-1" data-line-number="1">You can<span class="ot"> `join our Slack &lt;http://slack.writethedocs.org/&gt;`_</span> if you aren&#39;t already a member.</a>
+<a class="sourceLine" id="cb2-2" data-line-number="2"></a>
+<a class="sourceLine" id="cb2-3" data-line-number="3"><span class="dt">.. note:: </span>Feel free to send a Pull Request to update<span class="ot"> `this page`_</span>, if you want to include other channels.</a>
+<a class="sourceLine" id="cb2-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb2-5" data-line-number="5"><span class="dt">.. _this page: </span>https://github.com/writethedocs/www/blob/master/docs/slack.rst</a>
+<a class="sourceLine" id="cb2-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb2-7" data-line-number="7">Default channels</a>
+<a class="sourceLine" id="cb2-8" data-line-number="8">----------------</a>
+<a class="sourceLine" id="cb2-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb2-10" data-line-number="10">Everyone who joins the Slack will be added to these channels:</a>
+<a class="sourceLine" id="cb2-11" data-line-number="11"></a>
+<a class="sourceLine" id="cb2-12" data-line-number="12">* **#general** - The main channel for documentation related conversation and questions.</a>
+<a class="sourceLine" id="cb2-13" data-line-number="13">* **#watercooler** - For talking about things that are off-topic. Get to know folks other interests that aren&#39;t around documentation :)</a>
+<a class="sourceLine" id="cb2-14" data-line-number="14">* **#jobs-posts-only** - Posting or asking for jobs.</a>
+<a class="sourceLine" id="cb2-15" data-line-number="15">* **#wtd-conferences** - Questions and other thoughts around the <span class="kw">:doc:</span><span class="dv">`/conf/index`</span>.</a>
+<a class="sourceLine" id="cb2-16" data-line-number="16">* **#meetups** - Questions and other thoughts about our <span class="kw">:doc:</span><span class="dv">`/meetups/index`</span>.</a>
+<a class="sourceLine" id="cb2-17" data-line-number="17">* **#intros** - Introduce yourself! Let people know you&#39;re here, and why you care about docs :)</a></code></pre></div>
+</section><section class="slide level2">
+
+<!-- 
+## [SAS Kernel for Jupyter](https://sassoftware.github.io/sas_kernel/overview.html)
+ -->
+<p><a href="https://sassoftware.github.io/sas_kernel/overview.html"><img data-src="assets/sas-kernel-docs.png" style="width:90.0%" /></a></p>
+<!-- 
+## [Its source](https://sassoftware.github.io/sas_kernel/_sources/overview.rst.txt)
+
+![](assets/sas-kernel-docs-src.png){width=85%}
+ -->
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb3"><pre class="sourceCode rst"><code class="sourceCode rest"><a class="sourceLine" id="cb3-1" data-line-number="1">######################</a>
+<a class="sourceLine" id="cb3-2" data-line-number="2">Overview of SAS kernel</a>
+<a class="sourceLine" id="cb3-3" data-line-number="3">######################</a>
+<a class="sourceLine" id="cb3-4" data-line-number="4"><span class="co">.. I used http://documentation-style-guide-sphinx.readthedocs.io/en/latest/style-guide.html</span></a>
+<a class="sourceLine" id="cb3-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb3-6" data-line-number="6"></a>
+<a class="sourceLine" id="cb3-7" data-line-number="7">*************</a>
+<a class="sourceLine" id="cb3-8" data-line-number="8">What is this?</a>
+<a class="sourceLine" id="cb3-9" data-line-number="9">*************</a>
+<a class="sourceLine" id="cb3-10" data-line-number="10"></a>
+<a class="sourceLine" id="cb3-11" data-line-number="11">A SAS kernel for<span class="ot"> `Jupyter Notebooks &lt;http://www.jupyter.org&gt;`_</span>. Jupyter Notebooks</a>
+<a class="sourceLine" id="cb3-12" data-line-number="12">are capable of running programs in a variety of programming languages and it is</a>
+<a class="sourceLine" id="cb3-13" data-line-number="13">the kernel that enables this ability. The SAS kernel enables Jupyter Notebook to</a>
+<a class="sourceLine" id="cb3-14" data-line-number="14">provide the following programming experience:</a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb4"><pre class="sourceCode rst"><code class="sourceCode rest"><a class="sourceLine" id="cb4-1" data-line-number="1">******************</a>
+<a class="sourceLine" id="cb4-2" data-line-number="2">Load data into SAS</a>
+<a class="sourceLine" id="cb4-3" data-line-number="3">******************</a>
+<a class="sourceLine" id="cb4-4" data-line-number="4"></a>
+<a class="sourceLine" id="cb4-5" data-line-number="5">The FILENAME statement is used to specify an external file. The</a>
+<a class="sourceLine" id="cb4-6" data-line-number="6">IMPORT procedure can read data from a variety of external file formats.</a>
+<a class="sourceLine" id="cb4-7" data-line-number="7"></a>
+<a class="sourceLine" id="cb4-8" data-line-number="8"><span class="dt">.. code-block:: none</span></a>
+<a class="sourceLine" id="cb4-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb4-10" data-line-number="10"><span class="dt">    filename x &quot;./HR_comma_sep.csv&quot;;</span></a>
+<a class="sourceLine" id="cb4-11" data-line-number="11"><span class="dt">    proc import datafile=x out=_csv dbms=csv replace; run;</span></a></code></pre></div>
+</section><section class="slide level2">
+
+<div class="sourceCode" id="cb5"><pre class="sourceCode rst"><code class="sourceCode rest"><a class="sourceLine" id="cb5-1" data-line-number="1">Plot a heatmap that shows the relationship between employee</a>
+<a class="sourceLine" id="cb5-2" data-line-number="2">satisfaction and the last evaluation.</a>
+<a class="sourceLine" id="cb5-3" data-line-number="3"></a>
+<a class="sourceLine" id="cb5-4" data-line-number="4"><span class="dt">.. code-block:: none</span></a>
+<a class="sourceLine" id="cb5-5" data-line-number="5"></a>
+<a class="sourceLine" id="cb5-6" data-line-number="6"><span class="dt">    proc sgplot data=work._csv;</span></a>
+<a class="sourceLine" id="cb5-7" data-line-number="7"><span class="dt">        heatmap x=last_evaluation y=satisfaction_level;</span></a>
+<a class="sourceLine" id="cb5-8" data-line-number="8">    run;</a>
+<a class="sourceLine" id="cb5-9" data-line-number="9"></a>
+<a class="sourceLine" id="cb5-10" data-line-number="10"><span class="dt">.. image:: </span>./images/heatmap_satisfaction_evaluation.png</a>
+<a class="sourceLine" id="cb5-11" data-line-number="11">   <span class="fu">:scale:</span> 60 %</a>
+<a class="sourceLine" id="cb5-12" data-line-number="12">   <span class="fu">:alt:</span> Heatmap of employee statisfaction and evaluation.</a></code></pre></div>
+</section><section class="slide level2">
+
+<p><a href="https://sassoftware.github.io/sas_kernel/install.html#windows-install-assuming-sas-already-installed"><img data-src="assets/markup-compare-rendered.png" style="width:35.0%" /></a></p>
 <div class="columns">
 <div class="column" style="width:50%;">
-<p><img data-src="assets/sas-kernel-docs-src.png" /></p>
+<p><img data-src="assets/markup-compare-left.png" /></p>
 </div><div class="column" style="width:50%;">
-<p><img data-src="assets/sas-kernel-docs-src-markup.png" /></p>
+<p><img data-src="assets/markup-compare-right.png" /></p>
 </div>
 </div>
 </section><section id="markup-languages" class="slide level2">
@@ -140,6 +307,10 @@ digraph G {
 <li class="fragment"><a href="http://www.sphinx-doc.org/en/master/">sphinx</a></li>
 <li class="fragment"><a href="http://pandoc.org/index.html">pandoc</a></li>
 <li class="fragment"><a href="http://www.methods.co.nz/asciidoc/">AsciiDoc</a></li>
+<li class="fragment"><a href="https://dotnet.github.io/docfx/">DocFX</a> — <a href="https://eventstore.org/docs/server/users-and-access-control-lists/index.html?tabs=tabid-1%2Ctabid-3%2Ctabid-5#example">example</a>, <a href="https://github.com/EventStore/docs.geteventstore.com/blob/master/server/users-and-access-control-lists.md">src</a></li>
+<li class="fragment"><a href="https://jekyllrb.com/">Jekyll</a></li>
+<li class="fragment"><a href="https://docusaurus.io/">Docusaurus</a></li>
+<li class="fragment">google for <a href="http://lmgtfy.com/?q=static+site+generators+documentation">static site generators documentation</a></li>
 </ul>
 </section></section>
 <section><section id="benefits" class="title-slide slide level1"><h1>Benefits</h1></section><section class="slide level2">
@@ -153,6 +324,11 @@ digraph G {
 <li class="fragment">post/pre processing</li>
 </ul></li>
 </ul>
+<aside class="notes">
+<ul>
+<li>Reusable snippets of code</li>
+</ul>
+</aside>
 </section><section id="vcs-blame" class="slide level2">
 <h2><a href="https://gitlab.com/gitlab-com/www-gitlab-com/blame/master/source/handbook/git-page-update/index.html.md">VCS Blame</a></h2>
 <p><img data-src="assets/vcs-blame.png" style="width:80.0%" /></p>
@@ -173,12 +349,13 @@ digraph G {
 <section><section id="the-end" class="title-slide slide level1"><h1>The end</h1></section><section id="contact-info" class="slide level2">
 <h2>Contact info</h2>
 <p>Igor Khorlo</p>
-<p><img style="background:none; border:none; box-shadow:none; width:30.0%;" src="assets/logo.svg" data-lazy-loaded></p>
-<!-- ![](assets/logo.svg){#syneos-logo width=30%} -->
-<p><a href="https://www.syneoshealth.com/">Syneos Health</a></p>
+<p><a href="https://www.syneoshealth.com/"><img data-src="assets/logo.svg" style="background:none; border:none; box-shadow:none;" width="300" /></a></p>
 <p><a href="https://www.linkedin.com/in/igor-khorlo-4546129a/" class="uri">https://www.linkedin.com/in/igor-khorlo-4546129a/</a></p>
-<p>igor.khorlo@syneoshelath.com</p>
-<p>igor.khorlo@gmail.com</p>
+<p><a href="mailto:igor.khorlo@syneoshelath.com">igor.khorlo@syneoshelath.com</a></p>
+<p><a href="mailto:igor.khorlo@gmail.com">igor.khorlo@gmail.com</a></p>
+<aside class="notes">
+<p>General advise – You will have to spend some time to get used to it, but it will worth it in the end.</p>
+</aside>
 </section></section>
     </div>
   </div>
