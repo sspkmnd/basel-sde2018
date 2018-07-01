@@ -1,5 +1,7 @@
 .PHONY: all
-all: basel-sde2018.pdf basel-sde2018.docx
+abstract: basel-sde2018.pdf basel-sde2018.docx
+
+.PHONY: slides
 slides: slides.html
 
 %.beamer.pdf: %.md
@@ -20,15 +22,13 @@ slides: slides.html
 	open $@ || true
 
 %.html: %.md
-	# pandoc --standalone --self-contained -V transition=convex -V theme=white --mathjax -i -t revealjs $^ -o $@
 	pandoc --standalone -V transition=fade -V theme=white --mathjax -i -t revealjs $^ -o $@
-	# mv $@ revealjs/$@
 
 .PHONY: zip
 zip:
-	rm -r artifacts artifacts.zip
+	rm -r artifacts artifacts.zip || true
 	mkdir -p artifacts
-	cp -r slides.html reveal.js assets artifacts Documentation\ as\ a\ Code.pdf
+	cp -r slides.html reveal.js assets Documentation\ as\ a\ Code*.pdf artifacts
 	zip -r artifacts.zip artifacts
 
 .PHONY: clean

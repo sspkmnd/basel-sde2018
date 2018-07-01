@@ -10,22 +10,17 @@
 - Help users to get started
 - Documents processes 
 
-::: notes
-
-As we all know software development has 2 main problems:
-
-- naming a variables
-- lack of documentation
-
-Apart from this, ...
-
-:::
-
 ## How do you manage documentation?
 
 - Do you use Microsoft Word?
 - CMS?
 - Sharepoint?
+
+::: notes
+
+A question to audience.
+
+:::
 
 <!--  
 ## asd {data-background="assets/semantic-styles.png" width=50%}
@@ -54,7 +49,7 @@ Disadvantages of using Microsoft Word and similar [WYSIWYG](https://en.wikipedia
 
 - Keeping content and styling together.
 - Hard to review changes over many versions (track changes).
-- Hard to maintain several formats at once: DOCX, PDF, etc.
+- Hard to maintain several formats at once: HTML, DOCX, PDF, etc.
 - Very hard to collaborate.
 - Hard to automate.
 
@@ -66,9 +61,10 @@ Disadvantages of using Microsoft Word and similar [WYSIWYG](https://en.wikipedia
 
 # Approach
 
-## Separation of concerns
+## <a href="#" onclick="document.getElementById('theme').setAttribute('href','reveal.js/css/theme/black.css'); return false;">Separation</a> of <a href="#" onclick="document.getElementById('theme').setAttribute('href','reveal.js/css/theme/white.css'); return false;">concerns</a>
 
 ![](assets/separation-of-concerns.svg){ style="background:none; border:none; box-shadow:none;" width=1000px }
+
 
 <!--
 digraph G {
@@ -288,7 +284,7 @@ Igor Khorlo
 
 [https://www.linkedin.com/in/igor-khorlo-4546129a/](https://www.linkedin.com/in/igor-khorlo-4546129a/)
 
-[igor.khorlo@syneoshelath.com](mailto:igor.khorlo@syneoshelath.com)
+[igor.khorlo@syneoshealth.com](mailto:igor.khorlo@syneoshealth.com)
 
 [igor.khorlo@gmail.com](mailto:igor.khorlo@gmail.com)
 
