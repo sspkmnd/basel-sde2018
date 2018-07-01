@@ -1,3 +1,3 @@
-# basel-sde2018
+# Documentation as a Code
 
-Abstract for PhUSE Single Day Event 2018 in Basel
+[Reveal.js](https://github.com/hakimel/reveal.js/) slides for a presentation about Documentation as a Code for [PhUSE Single Day Event in Basel, Switzerland, 28th June 2018](https://www.phuse.eu/basel-sde-2018) 
