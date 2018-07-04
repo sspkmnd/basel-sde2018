@@ -1,4 +1,4 @@
-.PHONY: all
+.PHONY: abstract
 abstract: basel-sde2018.pdf basel-sde2018.docx
 
 .PHONY: slides

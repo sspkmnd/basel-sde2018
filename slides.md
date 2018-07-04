@@ -16,20 +16,6 @@
 - CMS?
 - Sharepoint?
 
-::: notes
-
-A question to audience.
-
-:::
-
-<!--  
-## asd {data-background="assets/semantic-styles.png" width=50%}
-
----
-
-![](assets/semantic-styles.png){width=70%}
--->
-
 ## { style="text-align:left;" }
 
 **Right way**
@@ -43,28 +29,17 @@ A question to audience.
 
 ## Disadvantages of [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) approach
 
-<!-- 
-Disadvantages of using Microsoft Word and similar [WYSIWYG](https://en.wikipedia.org/wiki/WYSIWYG) applications for Documentation:
--->
-
 - Keeping content and styling together.
 - Hard to review changes over many versions (track changes).
 - Hard to maintain several formats at once: HTML, DOCX, PDF, etc.
 - Very hard to collaborate.
 - Hard to automate.
 
-::: notes
-
-- Keeping docs in sync with a codebase
-
-:::
-
 # Approach
 
 ## <a href="#" onclick="document.getElementById('theme').setAttribute('href','reveal.js/css/theme/black.css'); return false;">Separation</a> of <a href="#" onclick="document.getElementById('theme').setAttribute('href','reveal.js/css/theme/white.css'); return false;">concerns</a>
 
 ![](assets/separation-of-concerns.svg){ style="background:none; border:none; box-shadow:none;" width=1000px }
-
 
 <!--
 digraph G {
@@ -88,14 +63,6 @@ digraph G {
 ---
 
 [![](assets/write-the-docs.png){width=75%}](http://www.writethedocs.org/)
-
-<!--
-
-## [Its source](https://raw.githubusercontent.com/writethedocs/www/master/docs/index.rst)
-
-![](assets/write-the-docs-src.png){width=85%}
-
--->
 
 ---
 
@@ -143,17 +110,7 @@ Everyone who joins the Slack will be added to these channels:
 
 ---
 
-<!-- 
-## [SAS Kernel for Jupyter](https://sassoftware.github.io/sas_kernel/overview.html)
- -->
-
 [![](assets/sas-kernel-docs.png){width=90%}](https://sassoftware.github.io/sas_kernel/overview.html)
-
-<!-- 
-## [Its source](https://sassoftware.github.io/sas_kernel/_sources/overview.rst.txt)
-
-![](assets/sas-kernel-docs-src.png){width=85%}
- -->
 
 ---
 
@@ -245,12 +202,6 @@ satisfaction and the last evaluation.
 - automation via Continuous Integration/Continuous Deployment
     + spellcheck
     + post/pre processing
-
-::: notes
-
-- Reusable snippets of code
-
-:::
 
 ## [VCS Blame](https://gitlab.com/gitlab-com/www-gitlab-com/blame/master/source/handbook/git-page-update/index.html.md)
 
